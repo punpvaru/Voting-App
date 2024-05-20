@@ -1,0 +1,11 @@
+<h2>Voters</h2>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Has Voted</th>
+    </tr>
+    <tr *ngFor="let voter of voters">
+        <td>{{ voter.name }}</td>
+        <td>{{ voter.hasVoted ? 'Yes' : 'No' }}</td>
+    </tr>
+</table>

@@ -1,0 +1,11 @@
+<h2>Candidates</h2>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Votes</th>
+  </tr>
+  <tr *ngFor="let candidate of candidates">
+    <td>{{ candidate.name }}</td>
+    <td>{{ candidate.votes }}</td>
+  </tr>
+</table>

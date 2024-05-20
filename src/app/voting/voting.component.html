@@ -1,0 +1,23 @@
+<div class="voting-container">
+  <div class="voting-dropdown">
+    <label for="voter">Select Voter:</label>
+    <select id="voter" [(ngModel)]="selectedVoterId" (ngModelChange)="onVoterChange($event)" required>
+      <option value="" disabled selected>Select a voter</option>
+      <option *ngFor="let voter of voters" [value]="voter.id">{{ voter.name }}</option>
+    </select>
+    <div *ngIf="formSubmitted && !selectedVoterId" class="error-message">Please select a voter</div>
+
+
+  </div>
+  <div class="voting-dropdown">
+    <label for="candidate">Select Candidate:</label>
+    <select id="candidate" [(ngModel)]="selectedCandidateId" (ngModelChange)="onCandidateChange($event)" required>
+      <option value="" disabled selected>Select a candidate</option>
+      <option *ngFor="let candidate of candidates" [value]="candidate.id">{{ candidate.name }}</option>
+    </select>
+    <div *ngIf="formSubmitted && !selectedCandidateId" class="error-message">Please select a candidate</div>
+  </div>
+  <div class="voting-table">
+    <button (click)="castVote()">Vote</button>
+  </div>
+</div>
